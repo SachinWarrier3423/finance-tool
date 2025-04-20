@@ -1,4 +1,4 @@
-import { connectDB } from '../../../lib/mongoose.js';
+import connectDB from '../../../lib/mongoose.js';
 import Income from '../../../models/Income';
 
 export async function POST(req) {
