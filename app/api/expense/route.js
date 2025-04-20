@@ -1,18 +1,10 @@
 import { NextResponse } from 'next/server'
 import mongoose from 'mongoose'
 import Expense from '../../../models/Expense'
+import connectDB from '../../../lib/mongoose'
 
-const MONGO_URI = process.env.MONGO_URI
 
-// MongoDB Connection
-const connectDB = async () => {
-  if (mongoose.connections[0].readyState !== 1) {
-    await mongoose.connect(MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
-  }
-}
+
 
 // GET request - Fetch all expenses
 export async function GET() {
